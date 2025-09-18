@@ -15,5 +15,14 @@ spec:
       containers:
         - name: better
           image: registry.digitalocean.com/cloud-ide-registry/better:${IMAGE_TAG}
+          env:
+            - name: DD_AGENT_HOST
+              value: "datadog-agent"
+            - name: DD_ENV
+              value: "staging"
+            - name: DD_SERVICE
+              value: "better-node-app"
+            - name: DD_TRACE_DEBUG
+              value: "true"
           ports:
             - containerPort: 8080
