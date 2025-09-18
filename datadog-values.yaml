@@ -1,0 +1,19 @@
+datadog:
+  site: "us5.datadoghq.com"
+  apiKeyExistingSecret: "datadog-secret"
+  apm:
+    instrumentation:
+      enabled: true
+      targets:
+        - name: "default-target"
+          ddTraceVersions:
+            java: "1"
+            python: "3"
+            js: "5"
+            php: "1"
+            dotnet: "3"
+            ruby: "2"
+  logs:
+    enabled: true
+    containerCollectAll: true
+
