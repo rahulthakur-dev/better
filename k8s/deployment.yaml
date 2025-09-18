@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: better
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: better
+  template:
+    metadata:
+      labels:
+        app: better
+    spec:
+      containers:
+        - name: better
+          image: registry.digitalocean.com/cloud-ide-registry/better:${IMAGE_TAG}
+          ports:
+            - containerPort: 8080
